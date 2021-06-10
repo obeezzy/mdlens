@@ -38,7 +38,6 @@ int main(int argc, char *argv[])
             QCoreApplication::exit(-1);
     }, Qt::QueuedConnection);
 
-    engine.setInitialProperties({{ "MD_CONTENT", QVariant::fromValue(MD_CONTENT)}});
     engine.rootContext()->setContextProperty("MD_CONTENT", MD_CONTENT);
     engine.load(url);
 
