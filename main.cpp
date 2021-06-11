@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
         qDebug() << "ERROR:" << mdFile.errorString();
         exit(1);
     }
-    const QString MD_CONTENT = mdFile.readAll();
+    const QString MD_CONTENT = mdFile.readAll().replace("<br/>", "  ");
 
     QQmlApplicationEngine engine;
     const QUrl url(QStringLiteral("qrc:/main.qml"));
